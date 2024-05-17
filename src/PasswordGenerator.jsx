@@ -80,7 +80,15 @@ function PasswordGenerator() {
       </button>
       <div className="generate-password">
         <input type="text" readOnly value={password} />
-        <button className="copy-btn">Copy</button>
+        <button
+          onClick={() => {
+            navigator.clipboard.writeText(password);
+            alert("Password copied to clipboard");
+          }}
+          className="copy-btn"
+        >
+          Copy
+        </button>
       </div>
     </div>
   );
